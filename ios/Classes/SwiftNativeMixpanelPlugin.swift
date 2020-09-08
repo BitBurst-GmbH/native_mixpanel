@@ -42,6 +42,7 @@ import Mixpanel
       
       if (call.method == "initialize") {
         Mixpanel.initialize(token: call.arguments as! String)
+        Mixpanel.mainInstance().serverURL = "https://api-eu.mixpanel.com"
       } else if(call.method == "identify") {
         Mixpanel.mainInstance().identify(distinctId: call.arguments as! String, usePeople: false)
       } else if (call.method == "identifyPeople") {
